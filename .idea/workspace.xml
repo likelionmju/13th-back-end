@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0c50b41c-0cbe-4ac0-96c9-16f324ae279f" name="변경" comment="">
+      <change beforePath="$PROJECT_DIR$/week02/week_02 김경태/Count.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week02/week_02 김경태/Min_Max.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week02/week_02 김경태/Multiply.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week02/week_02 김경태/Quadrant.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week02/week_02 김경태/Star.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week02/week_02 김경태/Watch.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week02/김인우/BJ_10807.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week02/김인우/BJ_10818.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week02/김인우/BJ_14681.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week02/김인우/BJ_2439.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week02/김인우/BJ_2588.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/week02/김인우/BJ_2884.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;HeyyJunn&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/HeyyJunn/LikeLion-13th-Backend.git&quot;,
+    &quot;accountId&quot;: &quot;c986415d-1316-44fd-925c-e48647a7625e&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2v29X6H8aBAvKggY7xiJU7VEq4Q" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/viola_patrinii/Desktop/LikeLion-13th-Backend&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;,
+    &quot;애플리케이션.Baekjoon_10807.executor&quot;: &quot;Run&quot;,
+    &quot;애플리케이션.Baekjoon_10818.executor&quot;: &quot;Run&quot;,
+    &quot;애플리케이션.Baekjoon_14681.executor&quot;: &quot;Run&quot;,
+    &quot;애플리케이션.Baekjoon_2439.executor&quot;: &quot;Run&quot;,
+    &quot;애플리케이션.Baekjoon_2588.executor&quot;: &quot;Run&quot;,
+    &quot;애플리케이션.Baekjoon_2884.executor&quot;: &quot;Run&quot;
+  }
+}</component>
+  <component name="RunManager" selected="애플리케이션.Baekjoon_2439">
+    <configuration name="Baekjoon_10807" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Baekjoon_10807" />
+      <module name="LikeLion-13th-Backend" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Baekjoon_10818" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Baekjoon_10818" />
+      <module name="LikeLion-13th-Backend" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Baekjoon_14681" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Baekjoon_14681" />
+      <module name="LikeLion-13th-Backend" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Baekjoon_2439" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Baekjoon_2439" />
+      <module name="LikeLion-13th-Backend" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Baekjoon_2588" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Baekjoon_2588" />
+      <module name="LikeLion-13th-Backend" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="애플리케이션.Baekjoon_2439" />
+        <item itemvalue="애플리케이션.Baekjoon_14681" />
+        <item itemvalue="애플리케이션.Baekjoon_10818" />
+        <item itemvalue="애플리케이션.Baekjoon_2588" />
+        <item itemvalue="애플리케이션.Baekjoon_10807" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.24978.46" />
+        <option value="bundled-js-predefined-d6986cc7102b-76f8388c3a79-JavaScript-IU-243.24978.46" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="애플리케이션 수준" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="디폴트 작업">
+      <changelist id="0c50b41c-0cbe-4ac0-96c9-16f324ae279f" name="변경" comment="" />
+      <created>1743332337797</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1743332337797</updated>
+      <workItem from="1743332338946" duration="7046000" />
+      <workItem from="1743411641185" duration="32000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
