@@ -1,8 +1,6 @@
-
 public class LottoMachineTest {
-
-	public static void main(String[] args) {
-		LottoMachine lottoMachine = new LottoMachine();
+    public static void main(String[] args) {
+        LottoMachine lottoMachine = new LottoMachine();
         lottoMachine.drawNumbers();
 
         Player player = new Player();
@@ -15,6 +13,5 @@ public class LottoMachineTest {
         String result = lottoChecker.checkResult(winningNumbers, playerNumbers);
         System.out.println("결과: " + result);
 
-	}
-
+    }
 }
