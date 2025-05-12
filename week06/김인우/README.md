@@ -1,7 +1,7 @@
 # MVC
 
 ## View
-Controller가 넘긴 데이터 수신 -> thymeleaf
+Controller가 넘긴 데이터 수신 -> thymeleaf <br>
 Controller에 요청 -> <form> 태그
 
 ## Controller
