@@ -7,6 +7,7 @@ public class LottoChecker {
             }
         }
 
+        // if - else - return
         switch (matchCount) {
             case 5: return "1등";
             case 4: return "2등";
@@ -15,3 +16,8 @@ public class LottoChecker {
         }
     }
 }
+
+
+
+brake
+fillEnergy
