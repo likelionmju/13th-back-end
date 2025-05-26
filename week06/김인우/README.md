@@ -5,7 +5,7 @@ Controller가 넘긴 데이터 수신 -> thymeleaf <br>
 Controller에 요청 -> form 태그
 
 ## Controller
--> URL 요청(GET/POST)을 매핑(@GetMapping)
+URL 요청(GET/POST)을 매핑(@GetMapping)
 -> Model에 데이터를 담아(model.addAttribute())
 -> View 리턴 (return "주소")
 
