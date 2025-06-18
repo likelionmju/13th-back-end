@@ -35,6 +35,7 @@ public class MemberController {
         return "redirect:/members";
     }
 
+
     @GetMapping("/members")
     public String list(Model model) {
         List<Member> members = service.getAllMembers();
@@ -48,4 +49,5 @@ public class MemberController {
         model.addAttribute("member", member);
         return "member";
     }
+
 }
