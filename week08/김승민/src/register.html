@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>회원 등록</title>
+</head>
+<body>
+<h1>영상 등록</h1>
+<form action="/analyses" method="post">
+  id: <input type="number" name="id" required/><br/>
+  video: <input type="text" name="video" required/><br/>
+  좋아요 수: <input type="number" name="likes" required/><br/>
+  공유 수: <input type="number" name="shares" required/><br/>
+  시청시간: <input type="number" name="playTime" required/><br/>
+  월별 업로드 수: <input type="number" name="monthlyUploadCount" required/><br/>
+
+  <button type="submit">등록</button>
+</form>
+</body>
+</html>

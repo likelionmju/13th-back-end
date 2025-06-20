@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>영상 분석</title>
+</head>
+<body>
+<h1>영상 분석</h1>
+<p>영상 이름: <span th:text="${analysis.video}"></span></p>
+<p>좋아요 수: <span th:text="${analysis.likes}"></span></p>
+<p>공유 수: <span th:text="${analysis.shares}"></span></p>
+<p>시청시간: <span th:text="${analysis.playTime}"></span></p>
+<p>월별 업로드 영상 수: <span th:text="${analysis.monthlyUploadCount}"></span></p>
+<p>유명 여부: <span th:text="${analysis.isPopular} ? '유명한 크리에이터!' : '분발하세요..'"></span></p>
+</body>
+</html>
