@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="container">
+    <div>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>이름</th>
+                <th>나이</th>
+                <th>이메일</th>
+                <th>알러지</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="member : ${members}">
+                <td th:text="${member.id}"></td>
+                <td th:text="${member.name}"></td>
+                <td th:text="${member.age}"></td>
+                <td th:text="${member.email}"></td>
+                <td th:text="${member.allergyInfo}"></td>
+            </tr>
+            </tbody>
+        </table>
+
+        <input type="button" value="홈으로" onclick="location.href='/'">
+    </div>
+</div> <!-- /container -->
+</body>
+</html>
