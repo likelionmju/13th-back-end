@@ -1,0 +1,7 @@
+week 08 repository interface 를 구현한 MemberRepository 에서는 HashMap 을 이용한 수동관리 코드로 작성하였습니다. sequence++  을 통하여 id 를 관리하였고 쿼리 없이 database 를 심플하게 대체할 수 있던 테스트 코드였습니다.
+
+이와 달리 JPA 를 이용한 JPA Repository 에서는 
+1) Entitiy 자바 객체를 기준으로 DB 를 다루는 방식이기 때문에, db 테이블을 직접 다루지 않고도 자바 객체를 통하여 db 작업을 숳행할 수 있었습니다.
+
+2) sql 쿼리를 굳이 jdbc 처럼 작성하지 않아도 메서드 이름만으로도 자동으로 db 에 접근할 수 있는 방식이 제공됩니다.
+
