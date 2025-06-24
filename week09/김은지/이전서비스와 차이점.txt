@@ -1,0 +1,13 @@
+1. Repository 구현 방식 변경
+이전: TodoRepository 인터페이스를 상속받은 TodoRepositorylmpl 클래스로 세부 내용들을 구현
+현재는 TodoRepository 인터페이스에서 JpaRepository 를 상속받아 구현 
+특히, save, findById,findAll 은 TodoRepository 인터페이스에서 정의하지 않아도 JPA에 의해 자동으로 호출될 수 있음. 
++그 외 추가로 필요한 findByUserName과 findByUserNameAndTodo 만 인터페이스에 따로 추가 작성
+
+2.요청 데이터 처리 방식 변경
+이전: Todo를 등록(register) 할 때 @RequestParam으로 요청을 받아 저장
+현재: @RequestBody 로 Todo 객체 전체를 JSON으로 받아 등록 
+
+3. ID 생성 방식 변경
+이전: private Long id 로 정의하고, Todo 가 생성될 때마다 생성자를 통해 id를 직접 1씩 증가시킴
+현재: @id, @GeneratedValue 어노테이션을 활용하여 DB가 자동으로 ID를 생성
