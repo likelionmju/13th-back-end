@@ -33,9 +33,9 @@ public class StudentService {
     }
 
     public Student update(Student student) {
-        if (studentRepository.existsById(student.getId())) {
-            return studentRepository.save(student);
-        } else throw new RuntimeException("아이디 "+student.getId()+"의 학생이 존재하지 않습니다.");
+        Student findStudent = studentRepository.findById(student.getId()).orElseThrow(() -> new RuntimeException("아이디 "+student.getId()+"의 학생이 존재하지 않습니다."));
+        findStudent.setScore(student.getScore());
+        return findStudent;
     }
 
     public void deleteById(Long id) {
