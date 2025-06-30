@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <title>영상 분석 시스템</title>
+  </head>
+  <body>
+    <h1>영상 분석 시스템</h1>
+    <ul>
+      <li><a href="/analyses/new">영상 등록</a></li>
+      <li><a href="/analyses">영상 전체 조회</a></li>
+      <li>
+        영상 한 개 조회:
+        <form action="/analyses/search" method="get">
+          영상 이름: <input type="text" name="name" required />
+          <button type="submit">조회</button>
+        </form>
+      </li>
+    </ul>
+  </body>
+</html>

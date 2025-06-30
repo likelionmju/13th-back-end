@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>회원 목록</title>
+</head>
+<body>
+<h1>회원 목록</h1>
+<table border="1">
+  <thead>
+  <tr>
+    <th>이름</th>
+    <th>나이</th>
+    <th>성인 여부</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="member : ${members}">
+    <td th:text="${member.name}"></td>
+    <td th:text="${member.age}"></td>
+    <td th:text="${member.isAdult} ? '성인' : '미성년자'"></td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>
