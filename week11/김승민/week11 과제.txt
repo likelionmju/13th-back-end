@@ -1,0 +1,131 @@
+# DTO(Data Transfer Object)
+
+: 계층 간 데이터 전송을 위해 도메인 모델 대신 사용되는 객체
+
+- 계층에는 view, controller, service, repository 등이 있다.
+- DB에 저장할 때는 Entity를 저장, but 계층간 데이터 이동시 DTO를 이용하여 데이터 교환
+
+*도메인 모델(Entity)를 사용하지 않고 DTO를 사용하는 이유
+
+1. 필요한 데이터만 응답으로 줄 수 있다.
+2. Entity 구현을 캡슐화하여 보호할 수 있다.
+3. Validation 코드와 Entity 속성 코드를 분리할 수 있다.
+
+*Entity와 Validation
+
+entity: 실제 데이터 덩어리
+
+→ 화면에 보여줄 때 entity인 회원정보(이름, 학번, 비밀번호, 주소 등등)를 다 보여줄 수 없으니 DTO를 써서 필요한 것만 골라서 보내줘야한다.
+
+validation 유효성 검사
+
+→ 회원
+
+DTO의 종류
+
+- Request DTO
+    
+    클라이언트가 서버로 “이렇게 처리해줘”라고 요청할 때 사용
+    
+- Response DTO
+    
+    서버가 처리 결과를 클라이언트에게 “이렇게 응답해줘”라고 보낼 때 사용
+    
+
+# Table Mapping
+
+: 자바 클래스(Entity)를 데이터 베이스 테이블과 연결(Mapping)하는 것
+
+단방향 관계: 한쪽에서만 참조하는 관계
+
+양방향 관계: 양쪽 클래스가 서로 참조하는 관계
+
+객체 그래프 탐색: 객체들끼리 서로 연결되어 있을 때, 연결을 따라가며 객체를 탐색하는 것
+
+순환 참조: 양방향 관계를 잘못 쓰면 생기는 무한 루프 문제로, @JsonIgnore 써서 한쪽은 JSON 직렬화를 막거나, DTO로 필요한 데이터만 전달하는 방식으로 해결할 수 있다.
+
+
+# 배포 과제
+
+* MySQLWorkbench로 RDS 연결
+  - connection name: MySQLWorkbench 대시보드에 나오는 이름
+  - hostname: 엔드포인트 복사하기(database를 복사해야 함!!)
+  - username: 마스터 사용자 이름(likelion)
+  - password: 마스터 사용자 암호(likelion1234)
+이렇게 하면 초기 데이버베이스로 생성한 likelion이 생성되어 있음을 확인!
+
+* git clone하기
+  git clone [git@github.com](mailto:git@github.com):seungmin0625/likelion-spring.git
+  이렇게 했는데 안 돼서 아래처럼 https로 하니 성공
+  git clone https://github.com/seungmin0625/likelion-spring.git
+
+*git clone 방식에는 두 가지가 있다!
+  HTTPS:  `https://github.com/seungmin0625/likelion-spring.git` ID/비번 or 토큰 (공개 저장소는 생략 가능)
+  SSH:  `git@github.com:seungmin0625/likelion-spring.git` SSH 키 필요 (항상)
+
+* RDS로 DataSource 설정
+  - src/main/resources/application.yml 파일 수정하기
+  - 아래와 같이 작성
+    spring:
+      application:
+        name: likelion-Spring
+      datasource:
+        url: jdbc:mysql://likelion-database.cbqu0yoyat5f.ap-northeast-2.rds.amazonaws.com:3306/likelion-database
+        username: likelion
+        password: likelion1234
+  - tab 사용하지 않기
+  - url에서 jdbc:mysql://이랑 포트번호랑 마지막에 데이터베이스 이름 넣기
+  - 들여쓰기 주의하기
+
+* RDS에 맞게 변경 후 git에 올리기
+  git add application.yml
+  git commit -m "chore: datasource 변경"
+  git push origin main
+
+
+* 내용 확인 명령어
+cat src/main/resources/application.yml
+
+* EC2에서 직접 수정
+nano src/main/resources/application.yml
+ctrl+X해서 nano 저장 및 종료
+
+* cat으로 url 수정된 것 확인했는데도 build가 안 된다?
+  → 오류 메시지 확인
+    Caused by: org.springframework.beans.factory.BeanCreationException at AbstractAutowireCapableBeanFactory.java:1826
+    Caused by: org.hibernate.service.spi.ServiceException at AbstractServiceRegistryImpl.java:276
+    Caused by: org.hibernate.HibernateException at DialectFactoryImpl.java:191
+  → hibernate 관련 에러임을 알 수 있다
+
+다음과 같이 추가하기
+  spring:
+    application:
+      name: likelion-Spring
+    datasource:
+      url: jdbc:mysql://likelion-database.cbqu0yoyat5f.ap-northeast-2.rds.amazonaws.com:3306/likeliondatabase
+      username: likelion
+      password: likelion1234
+    jpa:
+      hibernate:
+        ddl-auto: update
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.MySQL8Dialect
+여기까지 하면 빌드 성공
+
+- 다음 명령어로 자세한 로그를 볼 수 있다.
+  ./gradlew test --stacktrace --info
+
+- 다음 명령어로 어느 클래스에서 오류가 난 건지 확인할 수 있다.
+  cat build/reports/tests/test/index.html
+
+- 테스트 무시하고 build가 되는지만 확인하고 싶다면?
+  ./gradlew build -x test
+
+* 이 외에 build 오류 해결법
+  - 시스템 환경 변수에서 JAVA_HOME, Path 경로 확인
+  - 환경 변수를 변경하고 나면 터미널 창 모두 닫고 다시 실행하기
+    cd build/libs
+    ls
+    nohup java -jar likelion-Spring-0.0.1-SNAPSHOT.jar &
+    tail -f nohup.out
