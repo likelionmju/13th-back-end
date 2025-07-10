@@ -1,0 +1,40 @@
+DTO (Data Transfer Object) : 데이터 전송 객체
+-> 계층 간 데이터 전송 위해 도메인 모델 대신 사용되는 객체
+(계층 : View, Vontroller, Service, Repository 등)
+-> DB에 저장 시 Entity 저장, but 계층간 데이터 이동 시 DTO 이용하여 교환
+	=> 계층별 데이터 교환 위한 객체로 특별한 로직 없음
+
+why DTO 사용?
+-> 필요한 데이터만을 응답으로 줄 수 있음 : Entity 자체에는 클라이언트에게 불필요하거나 보안이 요구되는 정보가 포함되어 있음 > Entity 자체 넘겨줄 경우 추후 보안 문제 발생
+-> Entity 구현을 캡슐화 하여 보호 가능 : DTO 없다면 클라이언트의 요구와 Entity가 강하게 결합되어 클라이언트의 요구사항 변화가 Entity에 영향을 줌 > Entity는 도메인의 핵심 로직과 속성 가지고 있으며, 실제 DB 테이블에 대응되는 클래스로 보호 필요
+-> Validation 코드와 Entity 속성 코드 분리 가능 : Entity 영역에 Validation 코드 함께 있다면 Entity class는 모델링과 검증을 함께 담당하게 되어 class가 복잡해짐
+
+DTO 종류
+Request DTO : 클라이언트가 서버에 요청할 때 사용하는 데이터 구조
+-> 입력 검증 어노테이션 달아 요청 스펙 정의 가능
+-> 요청 처리에 필요한 필드만 포함
+Response DTO : 서버가 처리 결과를 클라이언틍에게 보낼 때 사용하는 데이터 구조
+-> Entity 내부의 민감 정보 숨기고 외부로 안전하게 공개된 필드만 포함
+
+
+Table Mapping
+-> 관계형 데이터베이스에서 테이블 간의 foreign Key로 연결관계를 맺고 join을 통해 테이블 조회
+
+데이블 간의 관계
+단방향 관계 : 한 엔티티에서만 다른 엔티티 참조하도록 매핑
+-> 장점 : 설계 단순, 쿼리 최적화 쉬움, 순환 참조 걱정 없음
+=> @ManyToOne, @JoinColumn(name="외래 키")
+양방향 관계 : 두 엔티티가 서로를 참조하도록 매핑
+-> 장점 : 도메인 로직에서 자연스러운 객체 탐색
+-> 주의할 점 : json 순환 직렬화 > 스택오버플로우 발생 가능
+=> @ManyToOne, @JoinColumn, @OneToMany(mappedBy="칼럼명")
+
+@OneToMany
+mappdedBy = "필드명or칼럼명"
+cascade = CascadeType.ALL : 부모 엔티티에 수행된 작업들을 자식도 동일하게 진행
+CascadeType
+PERSIST : 부모를 persist()(저장)할 때, 컬렉션에 담긴 자식도 함께 저장
+MERGE : 부모를 merge()(병합)할 때, 자식도 상태를 병합
+REMOVE : 부모를 remove()(삭제)할 째, 자식도 함께 삭제
+REFRESH : 부모를 refresh()할 때, 자식도 다시 불러와 영속성 컨텍스트 상태 갱신
+DETACH : 부모를 detach()(준영속 상태)할 때, 자식도 함께 분리
