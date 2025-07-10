@@ -1,0 +1,31 @@
+week11_hw 김은지
+0. DTO란?
+- 데이터를 전달할 때 필요한 객체
+-Request DTO는 사용자가 입력한 데이터를 서버에 전달, Entity는 실제로 db에 저장 , Response DTO는 저장된 정보 중 , 사용자에게 보여줄 것만 꺼낸 것 
+
+1. DTO 사용 이유 
+- 필요한 데이터만 전달 가능
+- 민감한 정보를 보호할 수 있음 
+- 검증하는 코드와 DB 코드가 함꼐 저장되면 클래스가 복잡해지는데 검사는 DTO 에서 진행하고 DB 저장은 Entity 클래스에서 실행함으로써, 이를 방지할 수 있음
+
+2. DTO의 종류 
+- Request DTO, Response DTO 
+
+3. 전체 흐름 
+Request DTO 로 요청 받음 ->  Entity로 바꿔서 DB에 저장 -> Response DTO로 필요한 정보만 결과로 리턴 
+- 이 때,  Request Dto에서는 사용자가 입력한 내용들에 대해 검사하고 (@NotBlank, @NotNull 등의 어노테이션을 통해 검사) -> entity 로 변환 후 -> ResponseDto 에서 사용자에게 리턴할 때에는 ResponseDto의 타입으로 리턴함.(정확히는 Entity를 ResponseDto로 바꿔서 리턴함) 
+
+4. Table Mapping
+(1) 단방향 관계
+ - 한쪽 엔티티에서만 다른 엔티티의 속성을 외래키로 가짐
+- 1:N 인 경우 N 쪽에 외래키 정의+ ManyToOne 어노테이션 
+(2) 양방향 관계 
+- 양쪽이 모두 참조하고 있는 경우 
+- 이 역시 마찬가지로 N 쪽에만 외래키가 정의됨
+- 1: @OneToMany N: @ManyToOne+ 외래키
+- 단, 1쪽에도 mappedBy = "author" 처럼 어떤 것과 연결되어있는지 명시해줌
+
++ FetchType
+@ManyToOne(fetch = FetchType.LAZY)
+- LAZY: 실제로 값이 사용될 때까지 기다림 
+- EAGER: 무조건 같이 조회 
