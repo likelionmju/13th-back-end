@@ -1,0 +1,20 @@
+1. DTO (Data Transfer Object)
+- 계층 간 데이터 전송을 위해 사용되는 객체.
+- Entity를 직접 노출하지 않고 필요한 데이터만 전달, 민감 정보 보호.
+- Request DTO: 클라이언트 요청 시 사용, 입력 검증 포함.
+- Response DTO: 클라이언트 응답 시 사용, 필요한 정보만 포함.
+- Entity와 DTO 간 매핑 작업 필요.
+
+2. 엔티티 매핑 관계
+- JPA를 사용하여 테이블 간 관계를 객체로 표현.
+- 단방향: 한쪽에서만 참조, 설계 단순, 순환참조 걱정 없음.
+- 양방향: 서로 참조, 객체 그래프 탐색 가능, 순환참조 주의 필요.
+- Cascade, orphanRemoval 등 옵션을 통해 부모-자식 관계 관리.
+- 예: Contact와 ContactNote 간 1:N 관계.
+
+3. 배포 (EC2 & RDS)
+- EC2: AWS에서 제공하는 가상 서버, 인스턴스 생성 후 JDK, Git 설치, 프로젝트 빌드 및 실행 (.jar).
+- RDS: 관리형 데이터베이스 서비스, MySQL 사용, 보안 그룹 및 퍼블릭 액세스 설정 필요.
+- 스프링부트 프로젝트는 EC2에 배포 후 RDS에 연결하여 데이터 저장/조회.
+- 배포 시 SSH 키 설정 및 git clone 필요, EC2 리소스 부족 시 스왑 메모리 설정.
+- application.yml에서 datasource에 RDS 정보 설정 후 Git에 반영.
